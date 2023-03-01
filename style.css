@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background : url(./image/photo-bg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+.container::before{
+    content: '';
+    position: absolute;
+    background: #00000086;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.container .content{
+    padding-top: 20px;
+}
+.container .title{
+    text-align: center;
+    font-size: 40px;
+    color: #ffffff;
+}
+.container .content .carte{
+    margin: 100px auto 0;
+    /* border: 3px solid #fff; */
+    max-width: 1300px;
+    background-color: #ffffff;
+    height: auto;
+}
+.container .content .carte{
+    display: grid;
+    grid-template-columns: 300px 300px 1fr;
+}
+.container .content .carte .item{
+    height: 400px;
+    cursor: pointer;
+}
+
+.container .content .carte .cart-img{
+    background-image: url(./image/img-cart.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.container .content .carte .cart-link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 10px; */
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 2);
+}
+.container .content .carte .cart-link .link{
+    /* border: 1px solid #000; */
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.container .content .carte .item .link:hover{
+    background-color: #5a585830;
+}
+/* .container .content .carte .cart-link .link span{
+    padding: 10px;
+
+} */
+.container .content .carte .cart-link .link a{
+    text-decoration: none;
+    color: #000;
+}
+.container .content .carte .cart-link .link a.active{
+    color: #fff;
+}
+.container .content .carte .cart-link .link:nth-child(1){
+    background-color: #05c46b;
+}
+
+.container .content .carte .cart-form{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.container .content .carte .cart-form .form-title{
+    text-align: center;
+}
+.container .content .carte .cart-form form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+} 
+.carte .cart-form form .input-cart{
+    position: relative;
+}
+.carte .cart-form form .input-cart input{
+    width: 100%;
+    padding: 10px 25px 10px;
+    border: none;
+    outline: none;
+    background-color: #d2dae2;
+    border-radius: 4px;
+    
+}
+.carte .cart-form form .input-cart span{
+    position: absolute;
+    top: 7px;
+    left: 5px;
+    color: #5a5858;
+}
+.carte .cart-form form .input-cart button{
+    margin-top: 20px;
+    width: 100%;
+    background-color: #05c46b;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    font-size: 15px;
+}
+.carte .cart-form form .forget-password{
+    text-align: center;
+    margin-top: 20px;
+}
+.carte .cart-form form .forget-password a{
+    text-decoration: none;
+    color: #5a5858;
+}
+.container .footer{
+    position: absolute;
+    bottom: 10px;
+    left: 5%;
+    color: #fff;
+}
+
+/* Responsive */
+@media(max-width:991px){
+    .container .content .carte{
+        display: grid;
+        grid-template-columns: 200px 200px 1fr;
+    }
+    .container .content .carte{
+        max-width: 950px;
+    }
+}
+@media(max-width:800px){
+    .cart-img{
+        display: none;
+    }
+    .container .content .carte{
+        display: grid;
+        grid-template-columns:200px 1fr;
+    }
+    .container .content .carte{
+        max-width: 950px;
+    }
+}
+@media(max-width:280px){
+    .cart-img{
+        display: none;
+    }
+    .container .content .carte{
+        display: grid;
+        grid-template-columns:110px 1fr;
+    }
+    .container .content .carte{
+        max-width: 100%;
+    }
+}
